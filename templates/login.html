@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "head.html" %}
+    </head>
+    <style>
+        body {
+            background-color: #88A39E;
+        }
+        .btn {
+            background-color: #1B4547;
+        }
+    </style>
+    <body class=" bg-opacity-75">
+    {% include "navbar.html" %}
+      <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="mt-4">
+          <div class="text-center text-light ">
+            <img src="{{ url_for('static', filename='img/logo-intro.webp') }}" class="rounded-circle log-intro" alt="Cinque Terre">
+          </div>
+          <div class="mt-4">
+            <form class="form" method="post" action="{{ url_for('login') }}">
+                <div class="msg">{{ msg }}</div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="username"  name="username" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-secondary btn-lg btn-block">Login</button>
+            </form>
+            <p class="bottom mt-4">Don't have an account?  <a class="bottom text-light" href="{{url_for('register')}}"> Sign Up here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+          </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+    <div class="mt-3 ">
+            <h3>Generate Dataset {{ prs }}</h3>
+<!--            <hr>-->
+            <img src="{{ url_for('vidfeed_dataset', nbr=prs) }}" width="100%" class="img-thumbnail">
+        </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-8 offset-lg-2">
+            <a href="/" type="button" class="btn btn-warning btn-lg"><b>Kembali</b></a>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('train_classifier', nbr=prs) }}"> Simpan </a>
+        </div>
+    </div>

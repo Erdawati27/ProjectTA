@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+     <style>
+        body {
+            background-color: #88A39E;
+        }
+        .btn,nav,.side {
+            background-color: #1B4547;
+        }
+    </style>
+<body>
+
+{% include "navbar.html" %}
+<div class="row flex-nowrap p-0 m-0">
+    {% include "sidebar.html" %}
+<section class="col col-xs-6 py-1">
+    <div class="row mt-5">
+        <div class="col-lg-7 ml-1">
+            <div class="row d-flex">
+                    <a href="/addprsn" type="button" class="btn btn-success btn-lg mx-2"><b>Input Data</b></a>
+                    <a href="/fr_page" type="button" class="btn btn-info btn-lg mx-2"><b>Pengenalan Wajah</b></a>
+            </div>
+            <hr>
+            <form class="form" method="post" action="/addprsn_submit">
+                <div class="form-group row">
+                    <label for="txtnbr" class="col-sm-2 col-form-label">Id Tamu</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="txtnbr" name="txtnbr" value={{ newnbr }} readonly>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="txtname" class="col-sm-2 col-form-label">Nama </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="txtname" name="txtname" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="address" class="col-sm-2 col-form-label">Alamat</label>
+                     <div class="col-sm-8">
+                        <input type="text" class="form-control" id="address" name="address" required>
+                     </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Nomor Telpon</label>
+                     <div class="col-sm-8">
+                        <input type="text" class="form-control" id="phone" name="phone" required>
+                     </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tujuan" class="col-sm-2 col-form-label">Tujuan</label>
+                     <div class="col-sm-8">
+                         <textarea type="text" class="form-control" id="tujuan" name="tujuan" required></textarea>
+                     </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <input type="submit" class="btn btn-primary btn-lg" value="Next">
+<!--                        <a href="/" type="button" class="btn btn-warning btn-lg"><b>Back</b></a>-->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 ">
+            {% include "gendataset.html" %}
+        </div>
+    </div>
+</section>
+</div>
+</body>
+</html>
